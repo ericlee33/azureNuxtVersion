@@ -8,10 +8,10 @@
           <h3 class="title">{{ item.title }}</h3>
           <p class="readinfo"> > 点击阅读全文 </p>
         </div>
-        <p class="content" v-html="$options.filters.ellipsis(item.content)"></p>
+        <p class="content" v-html="item.content"></p>
         <p class="watcher"><i class="el-icon-view"> 阅读( {{ item.watcher }} )</i></p>
         <p class="category"><i class="el-icon-paperclip"> {{ item.category }}</i></p>
-        <p class="time"><i class="el-icon-time"></i> {{ item.created_time | dateFormat }}</p>
+        <p class="time"><i class="el-icon-time"></i> {{ item.created_time }}</p>
       </div>
     </div>
     <el-pagination
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-
+import moment from 'moment'
 export default {
   props: ['category','info'],
   data(){
@@ -50,6 +50,12 @@ export default {
         .then(res => {
           if(res.data.err_code === 0){
             this.article = res.data.blogs
+            for(let i = 0 ; i < this.article.length; i++) {
+              if(this.article[i].content.length > 400) {
+                this.article[i].content = this.article[i].content.slice(0,400) + '...'
+              }
+              this.article[i].created_time = moment(this.article[i].created_time).format('YYYY-MM-DD HH:mm:ss')
+            }
           }
         })
         .catch(err => {
@@ -70,7 +76,8 @@ export default {
     },
     // 点击文章查看详细内容
     goBlogInfo(id) {
-      this.$router.push({ name: this.info, params: { id } }); 
+      // console.log(id)
+      this.$router.push({ name: `${this.info}-id`, params: { id } }); 
     },
     handleCurrentChange(val) {
       this.currentPage = val

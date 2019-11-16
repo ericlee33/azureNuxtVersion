@@ -94,7 +94,7 @@ export default {
       this.$store.commit('login')
     },
     goHome() {
-      this.$router.push({name: "home"})
+      this.$router.push({name: "bloglist"})
     }
   },
   computed: {
@@ -133,7 +133,7 @@ export default {
   background: #060116 url('~assets/images/nav/banner.png') no-repeat right bottom;
   width: 100%;
   height: 500px;
-  // 实现视差效果
+  /* 实现视差效果 */
   background-attachment: fixed;
   position: relative;
   box-shadow: 0 10px 20px skyblue;
@@ -150,7 +150,7 @@ export default {
     z-index: 999;
     background-color: rgba(0,0,0,0.3);
   }
-  // 吸顶效果
+  /* 吸顶效果 */
   .navBarWrap {
     position:fixed;
     top:0;
@@ -175,7 +175,6 @@ export default {
     font-size: 25px;
     color: skyblue;
     text-shadow: 0 0 5px azure;
-    // transform: translate(-50%,-50%);
 }
 
 

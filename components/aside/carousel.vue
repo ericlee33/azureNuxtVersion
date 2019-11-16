@@ -1,21 +1,22 @@
 <template>
+  <!-- 轮播图 -->
   <div>
-    <!-- 轮播图 -->
-    <div class="wrapper">
-      <swiper :options="swiperOption" >
-        <swiper-slide v-for='item in images' :key="item.id">
+    <div class="wrapper" v-swiper:mySwiper="swiperOption">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for='item in images' :key="item.id">
           <img :src="item.src" class="swiper-img">
-        </swiper-slide> 
+        </div> 
         <div class="swiper-pagination" slot="pagination"></div>
-     </swiper>
+      </div>
     </div>
   </div>
 </template>
 <script>
+
 export default {
    data() {
     return {
-     swiperOption: {
+      swiperOption: {
         autoplay: {
           autoplay: 2000,
           disableOnInteraction: false,//放置触摸后自动轮播停止
@@ -47,12 +48,10 @@ export default {
 
 <style lang="less" scoped>
 .wrapper {
-  padding: 2%;
   margin-top: 10%;
   background-color: rgba(255,255,255,.6);
   border-radius: 1%;
   box-shadow: 0 0 10px rgba(0,0,0,.3);
-
   img{
     width: 100%;
   }

@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   // 向父元素请求id
   props:["id"],
@@ -81,6 +82,9 @@ export default {
       this.$axios.get('/api/comment/' + this.id)
         .then(res => {
           this.comments = res.data.comment
+          for(let i = 0 ; i < this.article.length; i++) {
+            this.comments[i].created_time = moment(this.comments[i].created_time).format('YYYY-MM-DD HH:mm:ss')
+          }
         })
         .catch(err => {
           console.log(err)

@@ -32,7 +32,7 @@
         <div class="header">
           <span class="avatar"><img src="~/assets/images/comment-avatar.png" alt=""></span>
           <span class="nickname">{{ item.nickname }}</span>
-          <span class="time">{{ item.created_time | dateFormat }}</span>
+          <span class="time">{{ item.created_time }}</span>
         </div>
         <p class="content">
           {{ item.content }}
@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   data(){
     return{
@@ -85,6 +86,9 @@ export default {
         .then(res => {
           this.comments = res.data.data
           this.commentsnumber = res.data.data.length
+          for(let i = 0 ; i < this.comments.length ; i++) {
+            this.comments[i].created_time = moment(this.comments[i].created_time).format('YYYY-MM-DD HH:mm:ss')
+          }
         })
         .catch(err => {
           console.log(err)

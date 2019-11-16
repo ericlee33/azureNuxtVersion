@@ -41,7 +41,7 @@ export default {
 
 <style lang="less" scoped>
 .aboutblog {
-  // 名片整体样式
+  /* 名片整体样式 */
   color: forestgreen;
   font-weight: 1000;
   padding: 4%;

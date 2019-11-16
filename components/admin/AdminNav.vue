@@ -66,7 +66,7 @@
 .admin-nav-container {
   height: 100%;
   position: relative;
-  // 让按钮绝对定位
+  /* 让按钮绝对定位 */ 
   .nav-bottom {
     position: absolute;
     bottom: 10%;
