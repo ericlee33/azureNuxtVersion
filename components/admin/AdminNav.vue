@@ -38,19 +38,19 @@
   export default {
     methods: {
       handleOpen(key, keyPath) {
-        console.log(key, keyPath);
+        // console.log(key, keyPath);
       },
       handleClose(key, keyPath) {
-        console.log(key, keyPath);
+        // console.log(key, keyPath);
       },
       goAdminWebArticle() {
-        this.$router.push({ name: "adminwebarticle", params: {} })
+        this.$router.push({ name: "admin-adminwebarticle", params: {} })
       },
       goAccountPermission(){
-        this.$router.push({ name: 'accountpermission', params: {} })
+        this.$router.push({ name: 'admin-accountpermission', params: {} })
       },
       goMessageBoard() {
-        this.$router.push({ name: "messageboard", params: {} })
+        this.$router.push({ name: "admin-messageadmin", params: {} })
       },
       navHeight() {
         // document.getElementById('admin-nav-container').style.height=document. +'px'
@@ -65,7 +65,7 @@
 <style lang="less" scoped>
 .admin-nav-container {
   height: 100%;
-  position: relative;
+  // position: relative;
   /* 让按钮绝对定位 */ 
   .nav-bottom {
     position: absolute;

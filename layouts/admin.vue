@@ -5,13 +5,13 @@
     </div>
     <!-- 内容区域 -->
     <div class="right">
-      <router-view></router-view>
+      <nuxt />
     </div>
   </div>
 </template>
 
 <script>
-import AdminNav from '../../components/admin/AdminNav.vue'
+import AdminNav from '~/components/admin/AdminNav.vue'
 
 export default {
   data() {
@@ -34,6 +34,7 @@ body{
   height:100%;
 }
 .admin-container {
+  background-color: #fff;
   height: 100%;
   display: flex;
   .nav {

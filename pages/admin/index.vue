@@ -5,7 +5,10 @@
 </template>
 
 <script>
-
+export default {
+  middleware: 'auth',
+  layout: 'admin'
+}
 </script>
 
 <style lang="less" scoped>

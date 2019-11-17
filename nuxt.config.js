@@ -12,7 +12,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/azurespace.ico' }
     ]
   },
   /*
@@ -34,7 +34,9 @@ module.exports = {
   */
   plugins: [
     '@/plugins/element-ui',
-    {src:'~/plugins/swiper.js', ssr: false}
+    '~/middleware/auth.js',
+    {src:'~/plugins/swiper.js', ssr: false},
+    {src:'~/plugins/vue2-editor.js', ssr: false}
   ],
   /*
   ** Nuxt.js dev-modules

@@ -101,7 +101,7 @@ export default {
 html {
   height: 100%;
   width: 100%;
-  background: url('~assets/images/bg1.png');
+  // background: url('~assets/images/bg1.png');
 }
 .rich-img {
   width: 100%;
@@ -110,6 +110,7 @@ html {
 /* 避免动画使页面在加载时出现左右滚动条 */
 #app {
   overflow: hidden;
+  background: url('~assets/images/bg1.png');
 }
 .app-content {
   padding: 4% 0;

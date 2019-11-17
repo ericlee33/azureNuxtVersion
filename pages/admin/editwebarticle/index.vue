@@ -38,6 +38,10 @@
 <script>
 export default {
   // props: []
+  layout: 'admin',
+  validate({ params, query, store }) {
+    return store.state.auth
+  },
   data(){
     return{
       radio: '',

@@ -12,20 +12,24 @@ const store = () => new Vuex.Store({
     // 监听是否有新的comment出现
     commentFlag: false,
     // 博客文章总长度
-    articleLength: 0
+    articleLength: 0,
+    auth: false
   },
   mutations: {
     // 监听登录状态
     login(state) {
       state.loginFlag = false
+      state.auth = false
       // 从localstorage取出user字符串
       if (process.browser) {
-        let user = localStorage.getItem('user')
-        user = JSON.parse(user)
-
+        const user = JSON.parse(localStorage.getItem('user'))
+        const status = user.status
         // 判断是否登录过
         if(user) {
           state.loginFlag = true
+        }
+        if(status == 1) {
+          state.auth = true
         }
       }
       

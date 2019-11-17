@@ -12,7 +12,7 @@
 
           <div class="nav-container w">
             <!-- 导航栏以及logo -->
-            <h1 class="logo" @click="goHome">AzureSpace</h1>
+            <h1 class="logo" @click="goHome">AzureSpace个人博客，分享前端心得</h1>
             <ul>
               <!-- 默认在全部文章 -->
               <nuxt-link to="/bloglist">全部文章</nuxt-link>
@@ -40,6 +40,7 @@
     <transition class="hello" enter-active-class="animated swing">
       <div class="helloWords" v-show="helloFlag">Youth,like the praise of the spring</div>
     </transition>
+    <img id="cat" src="~assets/images/dragoncat.gif"></img>
   </div>
 
 </template>
@@ -79,7 +80,7 @@ export default {
       let user = JSON.parse(localStorage.getItem("user"))
 
       if(user.status === 1){
-        window.location.href = '/admin.html'
+        this.$router.push({name:'admin'})
       }else {
         this.$alert('对不起,您的权限不够', '管理权限', {
           confirmButtonText: '确定'
@@ -129,6 +130,14 @@ export default {
     transform: rotate(0) scale(0.3);
   }
 }
+@keyframes cat {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translateX(-1600px);
+  }
+}
 .header-container {
   background: #060116 url('~assets/images/nav/banner.png') no-repeat right bottom;
   width: 100%;
@@ -158,7 +167,12 @@ export default {
     z-index:999; 
     background-color: rgba(0,0,0,0.3);
   }
-
+  #cat {
+    position: absolute;
+    bottom: -40px;
+    right: -200px;
+    animation: cat 8s linear infinite;
+  }
   
 }
 
