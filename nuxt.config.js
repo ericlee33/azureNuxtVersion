@@ -9,8 +9,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'keywords', content: '个人博客，前端，前端自学，前端资料，前端博客，前端心得，前端学习，前端项目，Nuxt.js'},
-      { hid: 'description', name: 'description', content: 'AzureSpace个人博客，分享前端经验' }
+      { name: 'keywords', content: '个人博客，个人网站，前端，前端自学，自学前端，前端资料，前端博客，前端心得，前端学习，前端项目，Nuxt.js，前端SEO'},
+      { hid: 'description', name: 'description', content: 'AzureSpace个人博客(www.azure33.com)，分享前端经验，自学前端，前端资料，seo，nuxt.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/azurespace.ico' }
@@ -61,7 +61,7 @@ module.exports = {
     [
       '/api', 
       { 
-        target: 'http://localhost:8080', // api主机
+        target: 'http://localhost:3000', // api主机
       }
    ]
   ],

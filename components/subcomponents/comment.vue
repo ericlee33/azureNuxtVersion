@@ -31,7 +31,7 @@
         <div class="header">
           <span class="floor">第{{ i+1 }}楼</span>
           <span class="nickname">{{ item.nickname }}</span>
-          <span class="time">{{ item.created_time | dateFormat }}</span>
+          <span class="time">{{ item.created_time }}</span>
         </div>
         <p class="content">{{ item.content }}</p>
       </div>

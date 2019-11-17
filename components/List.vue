@@ -4,7 +4,7 @@
     <!-- 文章渲染 -->
     <div class="blog-container">
       <div class="articles" v-for="item in article" :key="item._id">
-        <div class="header" @click="goBlogInfo(item._id)">
+        <div class="header" @click="goBlogInfo(item._id,item.title)">
           <h3 class="title">{{ item.title }}</h3>
           <p class="readinfo"> > 点击阅读全文 </p>
         </div>
@@ -75,9 +75,9 @@ export default {
         })
     },
     // 点击文章查看详细内容
-    goBlogInfo(id) {
+    goBlogInfo(id,title) {
       // console.log(id)
-      this.$router.push({ name: `${this.info}-id`, params: { id } }); 
+      this.$router.push({ name: `${this.info}-id`, params: { id,title } }); 
     },
     handleCurrentChange(val) {
       this.currentPage = val

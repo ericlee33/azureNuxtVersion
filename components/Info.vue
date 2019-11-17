@@ -25,7 +25,16 @@ export default {
   props: ['id'],
   data(){
     return{
-      article: []
+      article: [],
+      title: this.$route.params.title
+    }
+  },
+  head(){
+    return {
+      title: this.title + '-AzureSpace个人博客',
+      // meta: [
+      //   { hid: ‘description‘, name: ‘description‘, content: ‘hi-Sen‘ }
+      // ]
     }
   },
   methods: {

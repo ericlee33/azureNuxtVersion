@@ -12,13 +12,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.admin-hello {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: #777;
+p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: chocolate;
+  font-size: 20px;
 }
 </style>
