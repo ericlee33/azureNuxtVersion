@@ -39,9 +39,7 @@
 export default {
   // props: []
   layout: 'admin',
-  validate({ params, query, store }) {
-    return store.state.auth
-  },
+  middleware: 'auth',
   data(){
     return{
       radio: '',

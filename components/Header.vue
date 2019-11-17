@@ -24,11 +24,11 @@
             </ul>
 
             <!-- 注册 -->
-            <div class="buttons" v-if="!loginFlag">
+            <div class="buttons" v-show="!loginFlag">
               <register></register>
               <login></login>
             </div>
-            <div v-if="loginFlag">
+            <div v-show="loginFlag">
               <el-button type="danger" size="mini" @click="outLogin">登出</el-button>
               <el-button type="success" size="mini" @click="goAdmin">进入管理系统</el-button>
             </div>

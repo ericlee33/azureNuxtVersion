@@ -44,12 +44,12 @@ export default {
     this.getMessageBoard()
   },
   watch: {
-    '$store.state.commentFlag': function(newVal,oldVal) {
-      if(this.$store.state.commentFlag) {
-        this.getMessageBoard()
-      }
-      this.$store.state.commentFlag = false
-    }
+    // '$store.state.commentFlag': function(newVal,oldVal) {
+    //   if(this.$store.state.commentFlag) {
+    //     this.getMessageBoard()
+    //   }
+    //   this.$store.commit('changeCommentFlag')
+    // }
   }
 }
 

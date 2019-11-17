@@ -60,7 +60,7 @@ module.exports = {
     [
       '/api', 
       { 
-        target: 'http://localhost:3000', // api主机
+        target: 'http://localhost:8080', // api主机
       }
    ]
   ],

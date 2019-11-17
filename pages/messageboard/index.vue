@@ -71,7 +71,7 @@ export default {
             this.formLabelAlign.name = ''
             this.formLabelAlign.content = ''
             this.$message('留言成功!')
-            this.$store.state.commentFlag = true
+            this.$store.commit('changeCommentFlag')
             // 发送成功后,刷新评论区内容
             this.getMessageBoard()
           }

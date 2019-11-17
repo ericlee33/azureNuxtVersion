@@ -36,6 +36,9 @@ const store = () => new Vuex.Store({
     },
     changeBlogLength(state, obj){
       state.articleLength = obj.blogslength
+    },
+    changeCommentFlag(state) {
+      state.commentFlag = !state.commentFlag 
     }
   },
   actions: {

@@ -48,9 +48,7 @@
 
 export default {
   layout: 'admin',
-  validate({ params, query, store }) {
-    return store.state.auth
-  },
+  middleware: 'auth',
   data() {
     return {
       // element提供的查找模块变量search
