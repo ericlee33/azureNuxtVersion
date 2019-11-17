@@ -5,11 +5,12 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'AzureSpace个人博客，分享前端经验',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: 'keywords', content: '个人博客，前端，前端自学，前端资料，前端博客，前端心得，前端学习，前端项目，Nuxt.js'},
+      { hid: 'description', name: 'description', content: 'AzureSpace个人博客，分享前端经验' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/azurespace.ico' }
