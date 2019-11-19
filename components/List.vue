@@ -5,13 +5,13 @@
     <div class="blog-container">
       <div class="articles" v-for="item in article" :key="item._id">
         <div class="header" @click="goBlogInfo(item._id,item.title)">
-          <h3 class="title">{{ item.title }}</h3>
+          <h2 class="title">{{ item.title }}</h2>
           <p class="readinfo"> > 点击阅读全文 </p>
         </div>
         <p class="content" v-html="item.content"></p>
         <p class="watcher"><i class="el-icon-view"> 阅读( {{ item.watcher }} )</i></p>
         <p class="category"><i class="el-icon-paperclip"> {{ item.category }}</i></p>
-        <p class="time"><i class="el-icon-time"></i> {{ item.created_time }}</p>
+        <p class="time"><i class="el-icon-time"></i> {{ item.created_time | formatDate() }}</p>
       </div>
     </div>
     <el-pagination
@@ -19,7 +19,7 @@
       :current-page="currentPage"
       :page-size="size"
       :background="true"
-      layout="total, prev, pager, next" 
+      layout="total, prev, pager, next, jumper" 
       :page-count="count"
       :total="total">
     </el-pagination>
@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import moment from 'moment'
 export default {
   props: ['category','info'],
   data(){
@@ -52,9 +51,22 @@ export default {
             this.article = res.data.blogs
             for(let i = 0 ; i < this.article.length; i++) {
               if(this.article[i].content.length > 400) {
+                // 主页内容缩减展示
+                // function seo(str) {
+                //   let description = ''
+                //   description = str
+                //   description = description.replace(/(\n)/g, "");    
+                //   description = description.replace(/(\t)/g, "");    
+                //   description = description.replace(/(\r)/g, "");    
+                //   description = description.replace(/<\/?[^p][^>]*>/g, "");    
+                //   description = description.replace(/\s*/g, "");  
+                //   description = description.replace(/&nbsp;/g, ""); 
+                //   return description.slice(0,400) + '...'
+                // }
+                // // console.log(seo(this.article[i].content).slice(0,400) + '...')
+                // this.article[i].content = seo(this.article[i].content).slice(0,120) + '...'
                 this.article[i].content = this.article[i].content.slice(0,400) + '...'
               }
-              this.article[i].created_time = moment(this.article[i].created_time).format('YYYY-MM-DD HH:mm:ss')
             }
           }
         })
@@ -139,6 +151,7 @@ export default {
         margin-bottom: 20px;
         font-size: 16px;
         line-height: 40px;
+        word-break:break-all;
       }
       /* .comment {
         position: absolute;

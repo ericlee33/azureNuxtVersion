@@ -7,8 +7,8 @@
       
     <div class="articles" v-for="item in article" :key="item.id">
       <div class="header">
-        <h3 class="title">{{ item.title }}</h3>
-        <p class="time">发表时间:{{ item.created_time }}</p>
+        <h1 class="title">{{ item.title }}</h1>
+        <p class="time">发表时间:{{ item.created_time | formatDate() }}</p>
         <p class="category">文章类型:{{ item.category }}</p>
       </div>
       <p class="content" v-html="item.content"></p>
@@ -20,21 +20,21 @@
 
 <script>
 import comment from './subcomponents/comment.vue'
-import moment from 'moment'
 export default {
   props: ['id'],
   data(){
     return{
       article: [],
-      title: this.$route.params.title
+      title: this.$route.params.title,
+      seoContent: ''
     }
   },
   head(){
     return {
-      title: this.title + '-AzureSpace个人博客',
-      // meta: [
-      //   { hid: ‘description‘, name: ‘description‘, content: ‘hi-Sen‘ }
-      // ]
+      title: this.title + ' - AzureSpace个人博客',
+      meta: [
+        { hid: 'description', name: 'description', content: this.seoContent}
+      ]
     }
   },
   methods: {
@@ -42,9 +42,18 @@ export default {
       this.$axios.get('/api/getblog/' + this.id)
         .then(res => {
           this.article = res.data.bloginfo
-          for(let i = 0 ; i < this.article.length; i++) {
-            this.article[i].created_time = moment(this.article[i].created_time).format('YYYY-MM-DD HH:mm:ss')
+          function seo(str) {
+            let description = ''
+            description = str
+            description = description.replace(/(\n)/g, "");    
+            description = description.replace(/(\t)/g, "");    
+            description = description.replace(/(\r)/g, "");    
+            description = description.replace(/<\/?[^>]*>/g, "");    
+            description = description.replace(/\s*/g, "");  
+            description = description.replace(/&nbsp;/g, ""); 
+            return description.slice(0,195) + '...'
           }
+          this.seoContent = seo(this.article[0].content)
         })
     },
     backToBlogList() {

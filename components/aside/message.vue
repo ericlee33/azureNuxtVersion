@@ -8,7 +8,7 @@
 
         <div class="header">
           <span class="nickname">{{ item.nickname }}</span>
-          <span class="time">{{ item.created_time }}</span>
+          <span class="time">{{ item.created_time | formatDate() }}</span>
         </div>
         <p class="content">
           {{ item.content }}
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import moment from 'moment'
 export default {
   data(){
     return{
@@ -31,9 +30,6 @@ export default {
       this.$axios.get('/api/getmessageboard')
         .then(res => {
           this.comments = res.data.data.slice(0,5)
-          for(let i = 0 ; i < this.comments.length ; i++) {
-            this.comments[i].created_time = moment(this.comments[i].created_time).format('YYYY-MM-DD HH:mm:ss')
-          }
         })
         .catch(err => {
           console.log(err)

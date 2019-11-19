@@ -12,8 +12,8 @@
 
           <div class="nav-container w">
             <!-- 导航栏以及logo -->
-            <h1 class="logo" @click="goHome">AzureSpace个人博客，分享前端心得</h1>
-            <ul>
+            <a class="logo" @click="goHome">AzureSpace个人博客，分享前端心得</a>
+            <nav>
               <!-- 默认在全部文章 -->
               <nuxt-link to="/bloglist">全部文章</nuxt-link>
               <nuxt-link to="/weblist">前端技术</nuxt-link>
@@ -21,7 +21,7 @@
               <nuxt-link to="/messageboard">留言板</nuxt-link>
               <nuxt-link to="/tools">工具</nuxt-link>
               <nuxt-link to="/aboutme">关于我</nuxt-link>
-            </ul>
+            </nav>
 
             <!-- 注册 -->
             <div class="buttons" v-show="!loginFlag">
@@ -189,6 +189,7 @@ export default {
     font-size: 25px;
     color: skyblue;
     text-shadow: 0 0 5px azure;
+    user-select:none;
 }
 
 
@@ -201,7 +202,7 @@ export default {
     justify-content: space-between;
     font-size: 10px;
 
-    h1 {
+    >a {
       text-indent: -9999em;
       background: url('~assets/images/nav/logo.png') no-repeat;
       background-size: contain;
@@ -210,7 +211,7 @@ export default {
       cursor: pointer;
       display: none;
     }
-    ul {
+    nav {
       .nav-active {
           color: @colorh;
           background-color: rgba(18, 212, 212, 0.301);
@@ -246,7 +247,7 @@ export default {
     display: flex;
     justify-content: space-between;
 
-    h1 {
+    >a {
       text-indent: -9999em;
       background: url('~assets/images/nav/logo.png') no-repeat;
       background-size: contain;
@@ -254,7 +255,7 @@ export default {
       height: 60px;
       cursor: pointer;
     }
-    ul {
+    nav {
       .nav-active {
           color: @colorh;
           background-color: rgba(18, 212, 212, 0.301);

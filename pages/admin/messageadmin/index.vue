@@ -48,7 +48,6 @@
 
 export default {
   layout: 'admin',
-  middleware: 'auth',
   data() {
     return {
       // element提供的查找模块变量search
@@ -99,7 +98,7 @@ export default {
 
           // 从后台获取到created_time之后进行时间的格式化
           this.tableData.forEach(i => {
-            i.created_time = this.$options.filters['dateFormat'](i.created_time)
+            i.created_time = this.$options.filters['formatDate'](i.created_time)
           })
       })
       .catch(err => {

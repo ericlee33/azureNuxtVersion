@@ -35,7 +35,7 @@ module.exports = {
   */
   plugins: [
     '@/plugins/element-ui',
-    '~/middleware/auth.js',
+    '~/plugins/filters.js',
     {src:'~/plugins/swiper.js', ssr: false},
     {src:'~/plugins/vue2-editor.js', ssr: false}
   ],
@@ -52,6 +52,7 @@ module.exports = {
     '@nuxtjs/proxy'
   ],
   router: {
+    middleware: 'auth',
     linkActiveClass: 'nav-active',
     scrollBehavior (to, from, savedPosition) {
       return { x: 0, y: 400 }
