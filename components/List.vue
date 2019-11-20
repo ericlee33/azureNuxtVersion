@@ -136,7 +136,7 @@ export default {
         }
 
         .title{
-          font-size: 20px;
+          font-size: 18px;
           color: @titlecolor;
           text-shadow: 2px 2px 15px white;
         }
@@ -149,8 +149,8 @@ export default {
       .content {
         margin-top: 30px;
         margin-bottom: 20px;
-        font-size: 16px;
-        line-height: 40px;
+        font-size: 14px;
+        line-height: 2;
         word-break:break-all;
       }
       /* .comment {

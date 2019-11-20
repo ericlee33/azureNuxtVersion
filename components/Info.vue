@@ -102,7 +102,9 @@ export default {
     justify-content: space-around;
     align-items: center;
     margin-top: 5%;
-
+    >h1 {
+      font-size: 18px;
+    }
     >p {
       font-size:12px;
       height: 10px;
