@@ -3,6 +3,7 @@
     <div class="w footer">
       <p>Azure的个人空间 Mounted on Tencent Cloud for <i>{{ days }}</i> days</p></p>
       <p class="copyright">Copyright © 2019, azure All Rights Reserved</p>
+      <p>京ICP备19054058号-1</p>
     </div>
   </div>
 </template>

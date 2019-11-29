@@ -23,13 +23,15 @@ const store = () => new Vuex.Store({
       // 从localstorage取出user字符串
       if (process.browser) {
         let user = JSON.parse(localStorage.getItem('user'))
-        let status = user.status
-        // 判断是否登录过
         if(user) {
-          state.loginFlag = true
-        }
-        if(status == 1) {
-          state.auth = true
+          let status = user.status
+          // 判断是否登录过
+          if(user) {
+            state.loginFlag = true
+          }
+          if(status == 1) {
+            state.auth = true
+          }
         }
       }
       
@@ -37,6 +39,7 @@ const store = () => new Vuex.Store({
     changeBlogLength(state, obj){
       state.articleLength = obj.blogslength
     },
+    // 用于当评论出现时，侧边组件评论改变
     changeCommentFlag(state) {
       state.commentFlag = !state.commentFlag 
     }

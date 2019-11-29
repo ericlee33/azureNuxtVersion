@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       category: undefined,
-      info: 'bloglist'
+      info: ''
     }
   },
   components: {
