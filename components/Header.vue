@@ -1,5 +1,5 @@
 <template>
-  <div id="header-container" class="header-container">
+  <div id="header-container" class="header-container" v-lazy:background-image = "bgc">
     <!-- 欢迎的千纸鹤 -->
     <!-- <transition 
       enter-active-class="animated jello"> -->
@@ -40,7 +40,7 @@
     <transition class="hello" enter-active-class="animated swing">
       <div class="helloWords" v-show="helloFlag">Youth,like the praise of the spring</div>
     </transition>
-    <img id="cat" src="~assets/images/dragoncat.gif"></img>
+    <img id="cat" v-lazy="catsrc"></img>
   </div>
 
 </template>
@@ -59,7 +59,9 @@ export default {
       helloFlag: false,
       // 登录或注册dialog是否显示
       dialogFormVisible: false,
-      formLabelWidth: '120px'
+      formLabelWidth: '120px',
+      catsrc:'./_nuxt/assets/images/dragoncat.gif',
+      bgc:'./_nuxt/assets/images/nav/banner1.jpg'
     }
   },
   methods: {
@@ -124,12 +126,12 @@ export default {
 @colorh: #00ffff;
 @keyframes decos {
   0% {
-    transform-origin: 20% 20%;
+    transform-origin: 40% 20%;
     transform: rotate(12deg) scale(2);
   }
   100% {
     transform-origin: 50% 20%;
-    transform: rotate(-5deg) scale(0.3);
+    transform: scale(0.5);
   }
 }
 @keyframes cat {
@@ -141,7 +143,8 @@ export default {
   }
 }
 .header-container {
-  background: #060116 url('~assets/images/nav/banner1.jpg') no-repeat right bottom;
+  /* background: #060116 url('~assets/images/nav/banner1.jpg') no-repeat right bottom; */
+  background: #060116 no-repeat right bottom;
   width: 100%;
   height: 500px;
   /* 实现视差效果 */
@@ -154,7 +157,7 @@ export default {
     background: url('~assets/images/nav/deco.png');
     height: 293px;
     width: 100%;
-    animation: decos 8s linear infinite;
+    animation: decos 4s linear infinite;
   }
   .navBar {
     position: fixed;
