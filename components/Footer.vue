@@ -27,7 +27,7 @@ export default {
 <style lang="less" scoped>
 .footer-container {
   min-height: 125px;
-  background: url('~assets/images/footer/ft1.png') repeat center center;
+  background: url('~assets/images/footer/ft2.jpg') repeat center center;
   position: relative;
   &::before {
     position: absolute;
@@ -45,11 +45,11 @@ export default {
     text-align: center;
     p {
       margin-top: 10px;
-      color: rgba(0, 0, 0, 0.8);
+      color: rgba(22, 26, 4, 0.644);
       font-weight: 700;
       font-size: 16px;
       >i {
-        color: blue;
+        color: rgb(192, 61, 21);
       }
     }
   }

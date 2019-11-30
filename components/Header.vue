@@ -124,10 +124,12 @@ export default {
 @colorh: #00ffff;
 @keyframes decos {
   0% {
-    transform: rotate(20deg) scale(2.5);
+    transform-origin: 20% 20%;
+    transform: rotate(12deg) scale(2);
   }
   100% {
-    transform: rotate(0) scale(0.3);
+    transform-origin: 50% 20%;
+    transform: rotate(-5deg) scale(0.3);
   }
 }
 @keyframes cat {
@@ -139,7 +141,7 @@ export default {
   }
 }
 .header-container {
-  background: #060116 url('~assets/images/nav/banner.png') no-repeat right bottom;
+  background: #060116 url('~assets/images/nav/banner1.jpg') no-repeat right bottom;
   width: 100%;
   height: 500px;
   /* 实现视差效果 */
@@ -148,10 +150,11 @@ export default {
   box-shadow: 0 10px 20px skyblue;
   .deco {
     position: absolute;
+    overflow: hidden;
     background: url('~assets/images/nav/deco.png');
     height: 293px;
     width: 100%;
-    animation: decos 4s linear infinite;
+    animation: decos 8s linear infinite;
   }
   .navBar {
     position: fixed;

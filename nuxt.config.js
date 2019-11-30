@@ -8,6 +8,7 @@ module.exports = {
     title: 'AzureSpace个人博客，分享前端经验',
     meta: [
       { charset: 'utf-8' },
+      { name: 'baidu-site-verification', content: 'Xxlfp4oNm7' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'keywords', content: '个人博客，个人网站，前端，前端自学，自学前端，前端资料，前端博客，前端心得，前端学习，前端项目，Nuxt.js，前端SEO'},
       { hid: 'description', name: 'description', content: 'AzureSpace个人博客(www.azure33.com)，分享前端经验，自学前端，前端资料，seo，nuxt.js' }
@@ -36,6 +37,7 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '~/plugins/filters.js',
+    {src: "~/plugins/vue-lazyload.js" ,ssr: false},
     {src:'~/plugins/swiper.js', ssr: false},
     {src:'~/plugins/vue2-editor.js', ssr: false}
   ],
