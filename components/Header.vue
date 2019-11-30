@@ -1,5 +1,6 @@
 <template>
-  <div id="header-container" class="header-container" v-lazy:background-image = "bgc">
+  <!-- <div id="header-container" class="header-container" v-lazy:background-image = "bgc"> -->
+  <div id="header-container" class="header-container">
     <!-- 欢迎的千纸鹤 -->
     <!-- <transition 
       enter-active-class="animated jello"> -->
@@ -60,8 +61,8 @@ export default {
       // 登录或注册dialog是否显示
       dialogFormVisible: false,
       formLabelWidth: '120px',
+      // bgc:'./_nuxt/assets/images/nav/banner.jpg',
       catsrc:'./_nuxt/assets/images/dragoncat.gif',
-      bgc:'./_nuxt/assets/images/nav/banner1.jpg'
     }
   },
   methods: {
@@ -144,7 +145,7 @@ export default {
 }
 .header-container {
   /* background: #060116 url('~assets/images/nav/banner1.jpg') no-repeat right bottom; */
-  background: #060116 no-repeat right bottom;
+  background: #060116 url('~assets/images/nav/banner.jpg') no-repeat right bottom;
   width: 100%;
   height: 500px;
   /* 实现视差效果 */

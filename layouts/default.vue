@@ -111,7 +111,7 @@ html {
 /* 避免动画使页面在加载时出现左右滚动条 */
 #app {
   overflow: hidden;
-  background: url('~assets/images/bg1.png');
+  background: url('~assets/images/bg1.jpg');
 }
 .app-content {
   padding: 4% 0;
