@@ -41,7 +41,7 @@
     <transition class="hello" enter-active-class="animated swing">
       <div class="helloWords" v-show="helloFlag">Youth,like the praise of the spring</div>
     </transition>
-    <img id="cat" v-lazy="catsrc"></img>
+    <img id="cat" src="../assets/images/dragoncat.gif"></img>
   </div>
 
 </template>
@@ -62,7 +62,6 @@ export default {
       dialogFormVisible: false,
       formLabelWidth: '120px',
       // bgc:'./_nuxt/assets/images/nav/banner.jpg',
-      catsrc:'./_nuxt/assets/images/dragoncat.gif',
     }
   },
   methods: {

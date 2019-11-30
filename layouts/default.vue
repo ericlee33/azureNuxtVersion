@@ -33,7 +33,7 @@
     <el-button type="primary" id="gotop" style="display:none;position:fixed;right:2%;bottom:10%;width:50px;height:50px;text-align:center;padding:13px;border-radius:50%;" @click="gotop()"><i class="el-icon-caret-top" style="font-weight:bold;font-size:20px;width:100%;height:100%;"></i></el-button>
     </div>
     <!-- fix的gif小人 -->
-    <img id="fixImg" v-lazy="fiximg">
+    <img id="fixImg" src="../assets/images/egg.gif">
   </div>
 </template>
 <script>
@@ -45,7 +45,6 @@ export default {
   data(){
     return {
       show: false,
-      fiximg:'./_nuxt/assets/images/egg.gif'
     }
   },
   methods: {
