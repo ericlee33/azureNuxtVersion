@@ -78,7 +78,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    analyze: true,
+    /* analyze: true, */
     vendor: ['element-ui'],
     optimization: {
       splitChunks: {
