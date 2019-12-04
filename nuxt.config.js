@@ -59,6 +59,9 @@ module.exports = {
       return { x: 0, y: 400 }
     }
   },
+  render: {
+    resourceHints: false
+  },
   proxy: [
     [
       '/api', 
@@ -75,6 +78,25 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    analyze: true,
+    vendor: ['element-ui'],
+    optimization: {
+      splitChunks: {
+        minSize: 10000,
+        maxSize: 250000
+      }
+    },
+    babel: {
+      plugins: [
+          [
+              'component',
+              {
+                  'libraryName': 'element-ui',
+                  'styleLibraryName': 'theme-chalk'
+              }
+          ]
+      ]
+    },
     extend (config, ctx) {
     }
   }

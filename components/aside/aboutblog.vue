@@ -18,7 +18,7 @@ export default {
     guestNum() {
       this.$axios.get('/api/guest')
         .then(res=>{
-          this.guest = res.data.data.guest
+          this.guest = Math.floor(res.data.data.guest / 2)
         })
     }
   },
