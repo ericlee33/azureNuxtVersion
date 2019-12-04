@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       category: '前端技术',
-      info: 'weblist-'
+      info: 'weblist'
     }
   },
   components: {

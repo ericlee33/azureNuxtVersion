@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       category: '个人随笔',
-      info: 'essaylist-'
+      info: 'essaylist'
     }
   },
   components: {

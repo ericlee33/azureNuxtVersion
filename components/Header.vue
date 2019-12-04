@@ -16,7 +16,7 @@
             <a class="logo" @click="goHome">AzureSpace个人博客，分享前端心得</a>
             <nav>
               <!-- 默认在全部文章 -->
-              <nuxt-link to="/">全部文章</nuxt-link>
+              <nuxt-link to="/bloglist">全部文章</nuxt-link>
               <nuxt-link to="/weblist">前端技术</nuxt-link>
               <nuxt-link to="/essaylist">个人随笔</nuxt-link>
               <nuxt-link to="/messageboard">留言板</nuxt-link>
@@ -175,7 +175,7 @@ export default {
   }
   #cat {
     position: absolute;
-    bottom: -40px;
+    bottom: -15px;
     right: -200px;
     animation: cat 8s linear infinite;
   }

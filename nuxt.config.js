@@ -54,7 +54,8 @@ module.exports = {
   ],
   router: {
     middleware: 'auth',
-    linkExactActiveClass: 'nav-active',
+    /* linkExactActiveClass: 'nav-active', */
+    linkActiveClass: 'nav-active',
     scrollBehavior (to, from, savedPosition) {
       return { x: 0, y: 400 }
     }
