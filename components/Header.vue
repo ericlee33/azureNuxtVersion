@@ -41,7 +41,7 @@
     <transition class="hello" enter-active-class="animated swing">
       <div class="helloWords" v-show="helloFlag">Youth,like the praise of the spring</div>
     </transition>
-    <img id="cat" src="../assets/images/dragoncat.gif"></img>
+    <img id="cat" src="../assets/images/dragoncat1.gif"></img>
   </div>
 
 </template>
