@@ -5,8 +5,8 @@
     <div class="blog-container">
       <div class="articles" v-for="item in article" :key="item._id">
         <div class="header" @click="goBlogInfo(item._id,item.title)">
-          <h2 class="title">{{ item.title }}</h2>
-          <p class="readinfo"> > 点击阅读全文 </p>
+          <a class="title">{{ item.title }}</a>
+          <a class="readinfo"> > 点击阅读全文 </a>
         </div>
         <p class="content" v-html="item.content"></p>
         <p class="watcher"><i class="el-icon-view"> 阅读( {{ item.watcher }} )</i></p>
