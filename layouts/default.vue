@@ -55,7 +55,7 @@ export default {
         offset: 200
       })
       this.$notify({
-        message: '新用户可以注册哦，如果有权限可以进入后台!',
+        message: 'Login后，如果有权限可以进入后台!',
         duration: 6500,
         offset: 300
       })

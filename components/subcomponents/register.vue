@@ -1,19 +1,19 @@
 <template>
   <div class="register-container">
 
-    <el-button type="primary" @click="dialogFormVisible = true" size="mini">注册</el-button>
+    <el-button type="primary" @click="dialogFormVisible = true" size="mini">Register</el-button>
 
-    <el-dialog title="注册" :visible.sync="dialogFormVisible" :append-to-body="true" :close-on-click-modal="false" center width="50%">
+    <el-dialog title="Register" :visible.sync="dialogFormVisible" :append-to-body="true" :close-on-click-modal="false" center width="50%">
       
-      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="68px" class="demo-ruleForm">
+      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="140px" class="demo-ruleForm">
         
-        <el-form-item label="帐号" prop="account">
+        <el-form-item label="Account" prop="account">
           <el-input v-model.number="ruleForm.account"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="pass">
+        <el-form-item label="Password" prop="pass">
           <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="确认密码" prop="checkPass">
+        <el-form-item label="Re-enter Password" prop="checkPass">
           <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>

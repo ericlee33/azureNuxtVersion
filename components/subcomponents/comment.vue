@@ -1,17 +1,17 @@
 <template>
   <div class="comment-container">
 
-    <h3>客官,想说些什么~尽管写下吧!</h3>
+    <h3>Write down some words here</h3>
     <hr>
 
-    <!-- 写评论 -->
+    <!-- 写Comment -->
     <div class="add-comment">
 
       <el-form label-width="120px" :model="formLabelAlign">
-        <el-form-item label="昵称" required>
+        <el-form-item label="Name" required>
           <el-input v-model="formLabelAlign.nickname"></el-input>
         </el-form-item>
-        <el-form-item label="想说些什么~" required>
+        <el-form-item label="Message" required>
           <el-input type="textarea" v-model="formLabelAlign.content" placeholder="来都来了,何不留个足迹呢~"></el-input>
         </el-form-item>
         <el-form-item>
@@ -21,12 +21,12 @@
 
     </div>
 
-    <!-- 评论区 -->
+    <!-- Comment区 -->
     <div class="get-comment-container">
 
-      <h3>评论~</h3>
+      <h3>Comment~</h3>
       <hr>
-      <!-- 评论内容 -->
+      <!-- Comment内容 -->
       <div class="getcomment" v-for="(item,i) in comments" :key="i">
         <div class="header">
           <span class="floor">第{{ i+1 }}楼</span>
@@ -54,7 +54,7 @@ export default {
     }
   },
   methods: {
-    // 向后台评论接口发送评论数据
+    // 向后台评论接口发送Comment数据
     sendMessageBoard(){
       // console.log(this.formLabelAlign)
       // console.log(this.id)
@@ -67,8 +67,8 @@ export default {
           if(res.data.err_code === 0){
             this.formLabelAlign.nickname = ''
             this.formLabelAlign.content = ''
-            this.$message('评论成功!')
-            // 评论成功后,刷新评论区内容
+            this.$message('Comment成功!')
+            // 评论成功后,刷新Comment区内容
             this.getComment()
           }
         })
@@ -76,7 +76,7 @@ export default {
           console.log(err)
         })
     },
-    // 请求评论区数据
+    // 请求Comment区数据
     getComment(){
       this.$axios.get('/api/comment/' + this.id)
         .then(res => {

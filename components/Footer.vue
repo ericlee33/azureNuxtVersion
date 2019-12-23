@@ -3,7 +3,7 @@
     <div class="w footer">
       <p>Azure的个人空间 Mounted on Tencent Cloud for <i>{{ days }}</i> days</p></p>
       <p class="copyright">Copyright © 2019, azure All Rights Reserved</p>
-      <p>京ICP备19054058号-1</p>
+      <p><a href="http://beian.miit.gov.cn">京ICP备19054058号</a></p>
     </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
     content: '';
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.1);
   }
   .footer {
     position: absolute;
@@ -45,11 +45,16 @@ export default {
     text-align: center;
     p {
       margin-top: 10px;
-      color: rgba(22, 26, 4, 0.644);
+      color: black;
       font-weight: 700;
       font-size: 16px;
       >i {
         color: rgb(192, 61, 21);
+      }
+      >a {
+        &:hover{
+          color: grey;
+        }
       }
     }
   }

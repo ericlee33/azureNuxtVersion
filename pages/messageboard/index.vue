@@ -1,17 +1,17 @@
 <template>
   <div class="comment-container">
 
-    <h3>Hello~欢迎来到我的博客，有什么想说的~尽管写下吧!</h3>
+    <h3>Hello~Welcome to Azure33's blog!</h3>
     <hr>
 
     <!-- 写评论 -->
     <div class="add-comment">
 
       <el-form label-width="120px" :model="formLabelAlign">
-        <el-form-item label="昵称" required>
+        <el-form-item label="Name" required>
           <el-input v-model="formLabelAlign.name"></el-input>
         </el-form-item>
-        <el-form-item label="想说些什么~" required>
+        <el-form-item label="Message" required>
           <el-input type="textarea" v-model="formLabelAlign.content" placeholder="来都来了,何不留个足迹呢~"></el-input>
         </el-form-item>
         <el-form-item>
@@ -24,7 +24,7 @@
     <!-- 评论区 -->
     <div class="get-comment-container">
 
-      <h3><i class="el-icon-chat-dot-square"></i> 有( {{ commentsnumber }} )个小伙伴正在吐槽~</h3>
+      <h3><i class="el-icon-chat-dot-square"></i> 目前有( {{ commentsnumber }} )个吐槽~</h3>
       <hr>
       <div class="getcomment" v-for="(item,i) in comments" :key="i">
         

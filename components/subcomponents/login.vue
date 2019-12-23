@@ -1,17 +1,17 @@
 <template>
   <div class="login-container">
 
-    <el-button type="primary" @click="dialogFormVisible = true" size="mini" plain>登录</el-button>
+    <el-button type="primary" @click="dialogFormVisible = true" size="mini" plain>Login</el-button>
 
-    <el-dialog title="登录" :visible.sync="dialogFormVisible" :append-to-body="true" :close-on-click-modal="false" center width="40%">
+    <el-dialog title="Login" :visible.sync="dialogFormVisible" :append-to-body="true" :close-on-click-modal="false" center width="40%">
       
-      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="40px" class="demo-ruleForm">
+      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="90px" class="demo-ruleForm">
         
-        <el-form-item label="帐号" prop="account">
+        <el-form-item label="Account" prop="account">
           <el-input v-model.number="ruleForm.account"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="pass">
-          <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+        <el-form-item label="Password" prop="pass">
+          <el-input type="Password" v-model="ruleForm.pass" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
 
@@ -29,12 +29,12 @@ export default {
   data() {
     var checkAccount = (rule, value, callback) => {
       if (!value) {
-        return callback(new Error('帐号不能为空'));
+        return callback(new Error('Name不能为空'));
       }
     };
     var validatePass = (rule, value, callback) => {
       if (value === '') {
-        callback(new Error('请输入密码'))
+        callback(new Error('请输入Password'))
       }
     }
     return {

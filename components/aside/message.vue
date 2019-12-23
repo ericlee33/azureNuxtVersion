@@ -1,7 +1,7 @@
 <template>
   <div class="message-container">
     <!-- 最新评论 -->
-    <h4><i class="el-icon-s-comment"></i>最新评论</h4>
+    <h4><i class="el-icon-s-comment"></i> 吐槽区</h4>
 
     <!-- 得到评论 -->
     <div class="getcomment" v-for="(item,i) in comments" :key="i">

@@ -31,7 +31,7 @@ export default {
   },
   head(){
     return {
-      title: this.title + ' - AzureSpace个人博客',
+      title: this.title + ' - AzureSpace-前端经验分享',
       meta: [
         { hid: 'description', name: 'description', content: this.seoContent}
       ]

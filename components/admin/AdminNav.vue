@@ -29,7 +29,7 @@
 
     <!-- 返回按钮 -->
     <div class="nav-bottom">
-      <a href="/"><el-button type="primary">返回博客</el-button></a>
+      <a href="/"><el-button type="primary">返回小站</el-button></a>
     </div>
   </div>
 </template>

@@ -13,13 +13,13 @@
 
           <div class="nav-container w">
             <!-- 导航栏以及logo -->
-            <a class="logo" @click="goHome">AzureSpace个人博客，分享前端心得</a>
+            <a class="logo" @click="goHome">AzureSpace个人空间，分享前端心得</a>
             <nav>
               <!-- 默认在全部文章 -->
               <nuxt-link to="/bloglist">全部文章</nuxt-link>
               <nuxt-link to="/weblist">前端技术</nuxt-link>
               <nuxt-link to="/essaylist">个人随笔</nuxt-link>
-              <nuxt-link to="/messageboard">留言板</nuxt-link>
+              <nuxt-link to="/messageboard">吐槽区</nuxt-link>
               <nuxt-link to="/tools">工具</nuxt-link>
               <nuxt-link to="/aboutme">关于我</nuxt-link>
             </nav>
@@ -153,11 +153,13 @@ export default {
   box-shadow: 0 10px 20px skyblue;
   .deco {
     position: absolute;
+    top: 0px;
+    left: 0px;
     overflow: hidden;
     background: url('~assets/images/nav/deco.png');
     height: 293px;
     width: 100%;
-    animation: decos 4s linear infinite;
+    animation: decos 6s linear infinite;
   }
   .navBar {
     position: fixed;
@@ -283,7 +285,7 @@ export default {
       }
     }
     .buttons {
-          width: 120px;
+          width: 150px;
           display: flex;
           justify-content: space-around;
         }
